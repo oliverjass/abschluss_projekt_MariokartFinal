@@ -1,31 +1,7 @@
-fun startGame(){
-    println(" ████     ████     ██████    █████████    ████    ███████    ███    ███     ██████    █████████  ████████████\n" +
-            " █████████████    ███  ███   ███    ████  ████  ███     ███  ███   ██      ███  ███   ███    ████    ████    \n"  +
-            " ███  ███  ███   ████  ████  ████████     ████  ███     ███  ████████     ████  ████  ████████       ████    \n" +
-            "████  ███  ████  ███    ███  ███    ███   ████    ███████    ███    ███   ███    ███  ███    ███     ████    \n")
 
-    println("${CYAN} " +
-            "            ::::::::    :::   :::       ::::    :::   :::::::::::           :::        :::    ::: \n" +
-            "           :+:    :+:   :+:   :+:       :+:+:   :+:       :+:             :+: :+:      :+:    :+:  \n" +
-            "          +:+           +:+ +:+        :+:+:+  +:+       +:+            +:+   +:+      +:+  +:+    \n" +
-            "         +#++:++#++     +#++:         +#+ +:+ +#+       +#+           +#++:++#++:      +#++:+      \n" +
-            "               +#+      +#+          +#+  +#+#+#       +#+           +#+     +#+     +#+  +#+      \n" +
-            "       #+#    #+#      #+#          #+#   #+#+#       #+#           #+#     #+#    #+#    #+#      \n" +
-            "       ########       ###          ###    ####       ###           ###     ###    ###    ###       ${RESET}\n")
-    println()
-    println("                                           [PRESS ENTER]                                                          ")
-    readln()
-    hauptmenue()
-}
-
-fun hauptmenue(){
-
-
-
-
-
+fun gameMenue(){
+    loadingLine()
     var startInput : String? = ""
-
     while (startInput != "ja"){
         val character = waehleCharacter()
         val fahrzeug = waehleFahrzeug()
@@ -122,7 +98,6 @@ fun waehleFahrzeug(): Fahrzeug? {
     return null
 }
 
-
 fun waehleRennstrecke(): Rennstrecke? {
     println("[--------Rennstrecke------------------------------------------------------------]")
     println("""
@@ -168,7 +143,6 @@ fun waehleRennstrecke(): Rennstrecke? {
     }
     return null
 }
-
 
 fun infoBox(character: Character?, fahrzeug: Fahrzeug?, rennstrecke: Rennstrecke?){
     if ((character != null) && (fahrzeug != null) && (rennstrecke != null)) {
@@ -237,6 +211,7 @@ fun neuesRennen(character: Character, fahrzeug: Fahrzeug){
 
 fun wiederholung(character: Character,fahrzeug: Fahrzeug,rennstrecke: Rennstrecke){
     println("Rennen wird wiederholt..")
+    rennstrecke.starteSimulation()
 }
 
 

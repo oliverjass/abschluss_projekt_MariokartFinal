@@ -2,6 +2,9 @@ import java.lang.Character
 
 class Rennstrecke(val name: String) {
 
+
+
+
     fun starteSimulation(): Any{
         return when (name) {
             "Mario Kart Stadium" -> marioKartStadium()
@@ -23,6 +26,6 @@ class Rennstrecke(val name: String) {
 
 
     override fun toString(): String {
-        return "$name"
+        return name
     }
 }
