@@ -1,29 +1,26 @@
 var meinCharacter = ""
 
 fun gameMenue(): String{
-    timeLoading()
-    var startInput = ""
-    while (startInput != "j"){
+    while (true){
+        var startInput = ""
         val character = selectCharacter()
         val rennstrecke = waehleRennstrecke()
-        meinCharacter = character
-        infoBox(character,alleFahrzeuge.random(),rennstrecke)
-        println("Bestätige das Rennen zu starten (ja/nein):")
-        startInput = readln().lowercase()
+             meinCharacter = character
+             infoBox(character,alleFahrzeuge.random(),rennstrecke)
+             println("Bestätige das Rennen zu starten (j/n):")
         try {
+            startInput = readln().lowercase()
             if (startInput == "j" || startInput == "ja") {
-                rennenBestaetigen(meinCharacter,alleFahrzeuge.random(),rennstrecke)
+                applyRace(meinCharacter,alleFahrzeuge.random(),rennstrecke)
                 continue
             } else {
-                println("Rennen wurde abgebrochen.")
-                hauptmenue()
+                println("Das Rennen wurde abgebrochen.")
+                
             }
         } catch (e: Exception){
-            println("FEHLER")
+            println("FEHLER Von gameMenue")
         }
-
     }
-    return ""
 }
 
 fun selectCharacter(): String {
@@ -46,10 +43,10 @@ fun selectCharacter(): String {
     """.trimIndent())
     println()
     println()
-    println(" Wählen Sie ihr Charakter aus: 1-${fahrerListe.size}                     ")
+    println(" Wählen Sie ihr Charakter aus: 1-${fahrerListe.size}                             ")
     println()
-    println("   [13]   [zurück]                                        ")
-    println("   [14]   [abbrechen]                                     ")
+    println("   [13]   [zurück]                                                               ")
+    println("   [14]   [abbrechen]                                                            ")
     println("[-------------------------------------------------------------------------------]")
     var inputCharacter = readln().toInt()
     when {
@@ -198,9 +195,7 @@ fun waehleRennstrecke(): Rennstrecke {
             println("FEHLER")
         }
     }
-    return Rennstrecke("none")
-
-
+    return Rennstrecke("")
 }
 
 fun infoBox(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
@@ -212,7 +207,7 @@ fun infoBox(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
     println("[------- Deine Auswahl -----------------------------------------------------------]")
 }
 
-fun rennenBestaetigen(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
+fun applyRace(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
     timeLoading()
     if (character != null && fahrzeug != null && rennstrecke != null){
         println("Rennen wird gestartet!")
@@ -249,10 +244,12 @@ fun neuesRennen(character: String, fahrzeug: String){
     val rennstrecke = waehleRennstrecke()
 
     infoBox(character,fahrzeug,rennstrecke)
+
     println("Bestäge das Rennen zu starten (j/n)")
     val startInput = readln().lowercase()
+
     if (startInput == "j" || startInput == "ja") {
-        rennenBestaetigen(character, fahrzeug, rennstrecke)
+        applyRace(character, fahrzeug, rennstrecke)
     } else if (startInput == "n" || startInput == "nein"){
         println("Das Rennen wurde abgebrochen.")
     } else {

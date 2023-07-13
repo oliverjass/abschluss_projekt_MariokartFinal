@@ -1,8 +1,5 @@
 
-
 var schnellesRennen = fahrerListe.shuffled().toMutableList()
-
-
 
 var fahrer1: Character = Character(schnellesRennen.removeLast())
 var fahrer2: Character = Character(schnellesRennen.removeLast())
@@ -16,7 +13,6 @@ var fahrer9: Character = Character(schnellesRennen.removeLast())
 var fahrer10: Character = Character(schnellesRennen.removeLast())
 var fahrer11: Character = Character(schnellesRennen.removeLast())
 var fahrer12: Character = Character(schnellesRennen.removeLast())
-
 
 
 var track01: Rennstrecke = Rennstrecke("Mario Kart Stadium")
@@ -52,6 +48,7 @@ class Rennstrecke(val name: String){
     }
     fun start(){
         starttrack()
+        waiting()
         countDown()
         println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()

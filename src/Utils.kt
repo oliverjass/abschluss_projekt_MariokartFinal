@@ -1,33 +1,13 @@
 
-
-
-
-
-
-
-
-
 // Zeit
-// TODO Das muss ich kontrollieren von Batch 8 kopiert
+fun waiting(){
+    Thread.sleep(2000)
+}
 
 fun timeLoading(){
     repeat(10){
         println("|")
         Thread.sleep(50)
-    }
-}
-
-fun countdown(seconds: Int) {
-    for (i in seconds downTo 0) {
-        if (i == 9)
-            print("\b")
-
-        print("\b$i")
-
-        if (i != 0)
-            Thread.sleep(1000)
-        else
-            println()
     }
 }
 
@@ -88,76 +68,13 @@ fun hauptmenue() {
             } catch (e: Exception) {
                     println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
             }
-            println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
+            println("   ${RED}FEHLER: Hauptmenu ${RESET}")
             hauptmenue()
         }
     }
 }
 
 
-fun infoMenue() {
-    timeLoading()
-    println("------------------- infos -------------------")
-    println()
-    println("  [1]  Allgemeines                           ")
-    println("  [2]  Regeln                                ")
-    println("  [3]  Item Lexikon                          ")
-    println("  [4]  Credits                               ")
-    println("  [5]  Zurück                                ")
-    println()
-    println("------------------- infos -------------------")
-    val auswahl = readln().toInt()
-    when (auswahl) {
-        1 -> allgemeines()
-        2 -> ""
-        3 -> ""
-        4 -> ""
-        5 -> hauptmenue()
-        else -> {
-            (auswahl >= 6)
-            println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
-            hauptmenue()
-        }
-    }
-}
-
-fun allgemeines(){
-    timeLoading()
-    println("------------------- Allgemeines -------------------")
-    println("       Willkommen zu Mario Kart ${CYAN}Syntax!${RESET}  ")
-    println()
-    println("\n" +
-            "       Schnall dich an und mach dich\n" +
-            "       bereit für ein rasantes\n" +
-            "       Rennabenteuer. Wähle deinen\n" +
-            "       Lieblingscharakter aus dem\n" +
-            "       Nintendo-Universum und meistere\n" +
-            "       eine Vielzahl von aufregenden\n" +
-            "       Rennstrecken. Nutze Power-Ups\n" +
-            "       und geschickte Fahrtechniken, um\n" +
-            "       deine Gegner zu überholen....\n" +
-            "       Genieße den Spaß und die Action in \n" +
-            "       Mario Kart Syntax!")
-    println()
-    println("------------------- Allgemeines -------------------")
-    println("  [1]  Zurück                                      ")
-    println("  [2]  Hauptmenue                                  ")
-    val auswahl = readln().toInt()
-    when (auswahl) {
-        1 -> infoMenue()
-        2 -> hauptmenue()
-        else -> {
-            (auswahl >= 3)
-            println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
-            allgemeines()
-        }
-    }
-
-}
-
-fun itemLexika(){
-    println()
-}
 
 // Farbpalette
 val RED = "\u001B[31m"
@@ -170,21 +87,6 @@ val CYAN = "\u001B[36m"
 val UNDERLINE = "\u001B[4m"
 val RESET = "\u001B[0m"
 
-
-// Items
-
-val ITEMNAME = listOf(
-    "Banane",
-    "Drei Bananen",
-    "Blitz",
-    "Turbo Pilz",
-    "Drei Turbo Pilze",
-    "Bo-omb","Kugelwilli",
-    "Roter Panzer",
-    "Blauer Panzer",
-    "Stern",
-    "Feuer Blume",
-    "Super Hupe")
 
 
 // Icons
@@ -211,9 +113,6 @@ val KRONE = "\uD83D\uDC51"
 
 var fahrerListe = listOf("Mario", "Luigi","Bowser","Princess Peach","Princess Daisy",
                                     "Toad","Wario","Yoshi","Ludwig","Donkey Kong","Link","Rosalina")
-
-
-
 
 
 var simListFahrerOne = mutableListOf(1,2,3,4,5,6,7,8,9,10,11,12)

@@ -1,3 +1,7 @@
+
+
+// wenn bevor Das rennen losgeht, werden hier die Karten der strecke angezeigt
+
 fun mapMushroom01(){
     println("${BLUE}                             .:::.                                \n" +
             "                           .==++-==                               \n" +
@@ -314,13 +318,6 @@ fun jump(){
     println("                   |${BLUE}░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░${RESET}|")
     Thread.sleep(300)
 }
-fun squareTrack() {
-    println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
-    println("                   |                     ██                  |")
-    println("                   |                   ██                    |")
-    println("                   |                     ██                  |")
-    println("                   |                   ██                    |")
-}
 fun finishTrack(){
     println("                   |${UNDERLINE}                                      ${RESET}|")
     println("                   |██  ██  ██  ██  ██  ██  ██  ██  ██  ██|")
@@ -336,19 +333,6 @@ fun finishTrack(){
     println("                   |                                      |")
 }
 
-
-// TODO Special Tracks
-fun stonetrack(){
-    println(
-        "                   |▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒|\n" +
-                "                   |▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓▒▒|")
-}
-fun teppich(){
-    println("                   ${YELLOW}|${RESET}${RED}░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░${YELLOW}|${RESET}\n" +
-            "                   ${YELLOW}|${RESET}${RED}░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░${YELLOW}|${RESET}\n" +
-            "                   ${YELLOW}|${RESET}${RED}░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░${YELLOW}|${RESET}\n" +
-            "                   ${YELLOW}|${RESET}${RED}░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░${RESET}${YELLOW}|${RESET}")
-}
 
 
 // TODO THEMES
@@ -711,7 +695,38 @@ fun gate2(){
 
 
 fun countDown(){
-    countdown(3)
+    println("           ## ##   \n" +
+            "          ##   ##  \n" +
+            "               ##  \n" +
+            "             ###   \n" +
+            "               ##  \n" +
+            "          ##   ##  \n" +
+            "           ## ##  ")
+    Thread.sleep(1000)
+    println("                    ## ##    \n" +
+            "                    ##  ##   \n" +
+            "                        ##   \n" +
+            "                       ##    \n" +
+            "                      ##     \n" +
+            "                     #   ##  \n" +
+            "                    ######   \n" +
+            "                              ")
+    Thread.sleep(1000)
+    println("                               ##    \n" +
+            "                              ###    \n" +
+            "                               ##    \n" +
+            "                               ##    \n" +
+            "                               ##    \n" +
+            "                               ##    \n" +
+            "                              ####     ")
+    Thread.sleep(1000)
+    println("                                    ## ##   \n" +
+            "                                   ##   ##  \n" +
+            "                                   ##   ##  \n" +
+            "                                   ##   ##  \n" +
+            "                                   ##   ##  \n" +
+            "                                   ##   ##  \n" +
+            "                                    ## ##     ")
     Thread.sleep(1000)
     println("                   |$YELLOW            ####     ####     ##    $RESET  |\n" +
             "                   |$YELLOW           ##  ##   ##  ##    ##    $RESET  |\n" +
