@@ -73,16 +73,21 @@ fun hauptmenue(){
     println("  [3]  Spiel beenden                         ")
     println()
     println("----------------- Hauptmenü -----------------")
-    var eingabe = readln().toInt()
-    when(eingabe) {
-        1 -> gameMenue()
-        2 -> infoMenue()
-        3 -> println("Spiel wird beendet")
-        else -> {
-            (eingabe >= 4)
-            println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
-            hauptmenue()
+    var eingabe: Int
+    try{
+        eingabe = readln().toInt()
+        when(eingabe) {
+            1 -> gameMenue()
+            2 -> infoMenue()
+            3 -> println("Spiel wird beendet")
+            else -> {
+                (eingabe >= 4)
+                println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
+                hauptmenue()
+            }
         }
+    } catch (e: Exception){
+        println("   ${RED}FEHLER: versuch es nochmal${RESET}")
     }
 }
 

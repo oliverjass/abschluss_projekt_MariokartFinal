@@ -23,7 +23,7 @@ fun gameMenue(): String{
             continue
         } else {
             println("Rennen wurde abgebrochen.")
-            //break
+            hauptmenue()
         }
     }
     return ""

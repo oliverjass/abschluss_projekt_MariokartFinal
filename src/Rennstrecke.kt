@@ -10,70 +10,74 @@ class Rennstrecke(val name: String) {
 fun testSimulation(): Int{
     var zufall = simListFahrerOne.random()
     if(zufall==1){
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |  Y                                    | ")
+        println("                   |  Y                                   | ")
         return 1
     } else if (zufall==2){
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |     Y                                 | ")
+        println("                   |     Y                                | ")
         return 2
     } else if (zufall==3){
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |        Y                              | ")
+        println("                   |        Y                             | ")
         return 3
     } else if (zufall==4){
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |           Y                           | ")
+        println("                   |           Y                          | ")
         return 4
     } else if (zufall==5){
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |              Y                        | ")
+        println("                   |              Y                       | ")
         return 5
     } else if (zufall==6){
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |                 Y                     | ")
+        println("                   |                 Y                    | ")
         return 6
     } else if (zufall==7){
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |                    Y                  | ")
+        println("                   |                    Y                 | ")
         return 7
     } else if (zufall==8){
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |                       Y               | ")
+        println("                   |                       Y              | ")
         return 8
     } else if (zufall==9){
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |                          Y            | ")
+        println("                   |                          Y           | ")
         return 9
     } else if (zufall==10){
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |                             Y         | ")
+        println("                   |                             Y        | ")
         return 10
     } else if (zufall==11){
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |                                Y      | ")
+        println("                   |                                Y     | ")
         return 11
     } else {
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        println("                   |                                    Y  | ")
+        println("                   |                                   Y  | ")
         return 12
     }
 
 
 }
-
+    fun waterPark(){
+        mapMushroom02()
+        Thread.sleep(3000)
+        simulation()
+    }
 
 
 
@@ -92,7 +96,9 @@ fun testSimulation(): Int{
 
 
     fun simulation ():Int {
-        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
+        starttrack()
+        countDown()
+        println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
         testSimulation()
         run()
@@ -108,6 +114,10 @@ fun testSimulation(): Int{
         run()
         testSimulation()
         run()
+        testSimulation()
+        jump()
+        air()
+        jump()
         testSimulation()
         run()
         testSimulation()
@@ -121,6 +131,7 @@ fun testSimulation(): Int{
         testSimulation()
         run()
         val ergebnis = testSimulation()
+        finishTrack()
         if (ergebnis == 1) {
             println("$fahrer1 hat gewonnen")
             return 1

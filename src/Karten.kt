@@ -765,19 +765,7 @@ fun air(){
 
 // TODO LEVELS
 
-
-fun mushRoomCupRace(){
-
-    marioKartStadium()
-    Thread.sleep(3000)
-    waterPark()
-    Thread.sleep(3000)
-    sweetSweetCanyon()
-    Thread.sleep(3000)
-    twompRuins()
-    Thread.sleep(3000)
-
-} // Mushroom Cup
+ // Mushroom Cup
 
 fun marioKartStadium(){
     mapMushroom01()
@@ -794,22 +782,7 @@ fun marioKartStadium(){
     finishTrack()
 
 }
-fun waterPark(){
-    mapMushroom02()
-    Thread.sleep(3000)
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    track()
-    jump()
-    air()
-    jump()
-    track()
-    track()
-    finishTrack()
-}
+
 fun sweetSweetCanyon(){
     mapMushroom03()
     Thread.sleep(3000)
