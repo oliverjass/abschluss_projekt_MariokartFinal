@@ -1,23 +1,15 @@
 var meinCharacter = ""
-//var schnellesRennenFahrzeug = ""
-
-
-
-
 
 fun gameMenue(): String{
-    loadingLine()
+    timeLoading()
     var startInput = ""
     while (startInput != "j"){
-        val character = waehleCharacter()
+        val character = selectCharacter()
         val rennstrecke = waehleRennstrecke()
         meinCharacter = character
         infoBox(character,alleFahrzeuge.random(),rennstrecke)
-
-
         println("Bestätige das Rennen zu starten (ja/nein):")
-        val startInput = readln().lowercase()
-
+        startInput = readln().lowercase()
         if (startInput == "j" || startInput == "ja") {
             rennenBestaetigen(meinCharacter,alleFahrzeuge.random(),rennstrecke)
             continue
@@ -29,18 +21,23 @@ fun gameMenue(): String{
     return ""
 }
 
-fun waehleCharacter(): String {
-
-
+fun selectCharacter(): String {
+    timeLoading()
     println("[--------Characters-------------------------------------]")
     println()
     println("""
-             [1]    $fahrer1             [7]    $fahrer7                       
-             [2]    $fahrer2             [8]    $fahrer8                       
-             [3]    $fahrer3             [9]    $fahrer9                      
-             [4]    $fahrer4            [10]    $fahrer10                  
-             [5]    $fahrer5            [11]    $fahrer11                       
-             [6]    $fahrer6            [12]    $fahrer12                     
+             [1]    $fahrer1                                 
+             [2]    $fahrer2                                 
+             [3]    $fahrer3                                
+             [4]    $fahrer4                             
+             [5]    $fahrer5                                  
+             [6]    $fahrer6 
+             [7]    $fahrer7  
+             [8]    $fahrer8  
+             [9]    $fahrer9  
+            [10]    $fahrer10 
+            [11]    $fahrer11 
+            [12]    $fahrer12                           
     """.trimIndent())
     println()
     println()
@@ -49,10 +46,6 @@ fun waehleCharacter(): String {
     println("   [13]   [zurück]                                        ")
     println("   [14]   [abbrechen]                                     ")
     println("[-------------------------------------------------------]")
-
-    // For schleife muss gemacht werden die über alle charactere gilt und falls der gewählte charakter gewählt ist, dann einen continue machen
-    // Bei den restlichen characteren sollen die character in der gegner (liste) hinzugefügt werden
-
     var inputCharacter = readln().toInt()
     when {
         inputCharacter == 1 -> {
@@ -90,7 +83,6 @@ fun waehleCharacter(): String {
         inputCharacter == 9 -> {
             println("Character: ${fahrer9}")
             return fahrer9.name
-
         }
         inputCharacter == 10 -> {
             println("Character: ${fahrer10}")
@@ -106,26 +98,21 @@ fun waehleCharacter(): String {
         }
         inputCharacter == 13 -> {
             hauptmenue()
-            return ""
         }
         inputCharacter == 14 -> {
             hauptmenue()
-            return ""
         }
         (inputCharacter >= 15) || (inputCharacter.toString() == "")  -> {
             println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
-            waehleCharacter()
-        }
-        else -> {
-            println("FEHLER")
+            selectCharacter()
         }
     }
     return ""
 }
 
 
-
 fun waehleRennstrecke(): Rennstrecke {
+    timeLoading()
     println("[--------Rennstrecke------------------------------------------------------------]")
     println("""
      Suchen sie eine Rennstrecke aus: 1-${trackNames.size}
@@ -194,43 +181,39 @@ fun waehleRennstrecke(): Rennstrecke {
         }
         inputTrack == 13 -> {
             hauptmenue()
-
         }
         inputTrack == 14 -> {
             hauptmenue()
         }
         (inputTrack >= 15) || (inputTrack.toString() == "")  -> {
             println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
-            waehleCharacter()
+            selectCharacter()
         }
         else -> {
             println("FEHLER")
         }
     }
-    //fahrerListe.removeAt(inputCharacter)
     return Rennstrecke("none")
 
 
 }
 
 fun infoBox(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
-    if (character != null && fahrzeug != null && rennstrecke != null) {
-        println("Character: ${character}")
-        println("Fahrzeug: ${fahrzeug}")
-        println("Rennstrecke: ${rennstrecke}")
-    }
-    else {
-        println("Ihre eingaben sind UNGÜLTIG")
-    }
+    timeLoading()
+    println("[------- Deine Auswahl -----------------------------------------------------------]")
+    println("Character: ${character}")
+    println("Fahrzeug: ${alleFahrzeuge.random()}")
+    println("Rennstrecke: ${rennstrecke}")
+    println("[------- Deine Auswahl -----------------------------------------------------------]")
 }
 
-fun rennenBestaetigen(character: String, fahrzeug: String, rennstrecke: Rennstrecke?){
+fun rennenBestaetigen(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
+    timeLoading()
     if (character != null && fahrzeug != null && rennstrecke != null){
         println("Rennen wird gestartet!")
-
         val simulation = rennstrecke.starteSimulation()
-        println("Simulation: $simulation")
-
+        println()
+        println()
         repeatMenu(character, fahrzeug, rennstrecke)
     } else {
         println("Rennen kann nicht gestartet werden.")
@@ -244,7 +227,9 @@ fun repeatMenu(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
     println("   [3] -  zum Hauptmenü")
     val auswahl = readln().toInt()
     when(auswahl) {
-        1 -> wiederholung(character,fahrzeug,rennstrecke)
+        1 -> {wiederholung(character,fahrzeug,rennstrecke)
+            repeatMenu(character,fahrzeug,rennstrecke)
+        }
         2 -> neuesRennen(character,fahrzeug)
         3 -> hauptmenue()
         else -> {
@@ -256,17 +241,11 @@ fun repeatMenu(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
 
 fun neuesRennen(character: String, fahrzeug: String){
     println("Wählen Sie eine neue Rennstrecke")
-
     val rennstrecke = waehleRennstrecke()
 
     infoBox(character,fahrzeug,rennstrecke)
-
-
-
-
     println("Bestäge das Rennen zu starten (j/n)")
     val startInput = readln().lowercase()
-
     if (startInput == "j" || startInput == "ja") {
         rennenBestaetigen(character, fahrzeug, rennstrecke)
     } else if (startInput == "n" || startInput == "nein"){

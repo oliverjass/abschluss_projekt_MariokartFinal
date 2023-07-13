@@ -301,19 +301,9 @@ fun starttrack(){
     println("                   |  ██  ██  ██  ██  ██  ██  ██  ██  ██  |")
 }
 fun track(){
-    println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
-    Thread.sleep(300)
-
-    Thread.sleep(300)
-    println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
-    Thread.sleep(300)
-    println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
-
-    Thread.sleep(300)
+    println("                   |  Y  Y  Y  Y  Y  Y █   Y  Y  Y  Y  Y  | ")
 
 }
-
-
 fun jump(){
     println("                   |${BLUE}░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░${RESET}|")
     Thread.sleep(300)
@@ -323,9 +313,6 @@ fun jump(){
     Thread.sleep(300)
     println("                   |${BLUE}░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░${RESET}|")
     Thread.sleep(300)
-}
-fun trackBreak(){
-    println("                   |--------------------------------------|")
 }
 fun squareTrack() {
     println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y   Y  | ")
@@ -693,41 +680,6 @@ fun windMils(){
             " _..,____]__|_\\-_'|_[___,.._\n" +
             "'                          ``'--,..,.     ")
 }
-fun hauntedHouse(){
-    println("                              .     .\n" +
-            "                               !!!!!!!\n" +
-            "                       .       [[[|]]]    .\n" +
-            "                       !!!!!!!!|--_--|!!!!!\n" +
-            "                       [[[[[[[[\\_(X)_/]]]]]\n" +
-            "               .-.     /-_--__-/_--_-\\-_--\\\n" +
-            "               |=|    /-_---__/__-__-_\\__-_\\\n" +
-            "           . . |=| ._/-__-__\\===========/-__\\_\n" +
-            "           !!!!!!!!!\\========[ /]]|[[\\ ]=====/\n" +
-            "          /-_--_-_-_[[[[[[[[[||==  == ||]]]]]]\n" +
-            "         /-_--_--_--_|=  === ||=/^|^\\ ||== =|\n" +
-            "        /-_-/^|^\\-_--| /^|^\\=|| | | | ||^\\= |\n" +
-            "       /_-_-| | |-_--|=| | | ||=|_|_|=||\"|==|\n" +
-            "      /-__--|_|_|_-_-| |_|_|=||______=||_| =|\n" +
-            "     /_-__--_-__-___-|_=__=_.`---------'._=_|__\n" +
-            "    /-----------------------\\===========/-----/\n" +
-            "   ^^^\\^^^^^^^^^^^^^^^^^^^^^^[[|]]|[[|]]=====/\n" +
-            "       |.' ..==::'\"'::==.. '.[ /~~~~~\\ ]]]]]]]\n" +
-            "       | .'=[[[|]]|[[|]]]=`._||==  =  || =\\ ]\n" +
-            "       ||== =|/ _____ \\|== = ||=/^|^\\=||^\\ ||\n" +
-            "       || == `||-----||' = ==|| | | |=|| |=||\n" +
-            "       ||= == ||:^s^:|| = == ||=| | | || |=||\n" +
-            "       || = = ||:___:||= == =|| |_|_| ||_|=||\n" +
-            "      _||_ = =||o---.|| = ==_||_= == =||==_||_\n" +
-            "      \\__/= = ||:   :||= == \\__/[][][][][]\\__/\n" +
-            "      [||]= ==||:___:|| = = [||]\\\\//\\\\//\\\\[||]\n" +
-            "      }  {---'\"'-----'\"'- --}  {//\\\\//\\\\//}  {\n" +
-            "    __[==]__________________[==]\\\\//\\\\//\\\\[==]_\n" +
-            "   |`|~~~~|================|~~~~|~~~~~~~~|~~~~||\n" +
-            "jgs|^| ^  |================|^   | ^ ^^ ^ |  ^ ||\n" +
-            "  \\|//\\\\/^|/==============\\|/^\\\\\\^/^.\\^///\\\\//|///\n" +
-            " \\\\///\\\\\\//===============\\\\//\\\\///\\\\\\\\////\\\\\\/////\n" +
-            " \"\"'\"\"'\"\"\".'..'. ' '. ''..'.\"\"'\"\"'\"\"'\"\"''\"''\"''\"\"")
-}
 fun gate2(){
     println("                                     {} {}\n" +
             "                             !  !  ! II II !  !  !\n" +
@@ -751,238 +703,12 @@ fun gate2(){
             "    -|--|--|| |  |  |  |  |  |  | || || |  |  |  |  |  |  | ||= |  |  | \n" +
             "    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^~~~~~~~~~~~")
 }
-fun air(){
-    println("                   -      _       _    -       -          _")
-    println("                   -      -    -  -            -    _     _")
-    println("                          _            -       -          _")
-    println("                   -              _    -                  -")
-    println("                   -      _                    -      _   _")
-    println("                              -   _    -                  _")
-    println("                   -      _       _    -       -          _")
-}
 
 
 
-// TODO LEVELS
-
- // Mushroom Cup
-
-fun marioKartStadium(){
-    mapMushroom01()
-    Thread.sleep(3000)
-    flyingCastle()
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    track()
-    track()
-    track()
-    finishTrack()
-
-}
-
-fun sweetSweetCanyon(){
-    mapMushroom03()
-    Thread.sleep(3000)
-    canyon()
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    track()
-    track()
-    track()
-    finishTrack()
-}
-fun twompRuins(){
-    mapMushroom04()
-    Thread.sleep(3000)
-    temple()
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    track()
-    jump()
-    garden()
-    jump()
-    track()
-    track()
-    track()
-    finishTrack()
-    finish()
-}
 
 
 
-fun flowersCupRace(){
-
-    marioCircuit()
-    Thread.sleep(3000)
-    toadHarbor()
-    Thread.sleep(3000)
-    twistedMansion()
-    Thread.sleep(3000)
-    shyGuyFalls()
-} // Flower Cup
-
-fun marioCircuit(){
-    mapFlower01()
-    Thread.sleep(3000)
-    castle2()
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    track()
-    track()
-    track()
-    track()
-    track()
-    finishTrack()
-
-}
-fun toadHarbor(){
-    mapFlower02()
-    Thread.sleep(3000)
-    beach()
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    track()
-    track()
-    track()
-    track()
-    track()
-    finishTrack()
-
-}
-fun twistedMansion(){
-    mapFlower03()
-    Thread.sleep(3000)
-    gate2()
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    track()
-    track()
-    track()
-    track()
-    finishTrack()
-}
-fun shyGuyFalls(){
-    mapFlower04()
-    Thread.sleep(3000)
-    waterfall()
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    jump()
-    water()
-    jump()
-    track()
-    track()
-    track()
-    track()
-    finishTrack()
-    finish()
-}
-
-
-
-fun specialCupRace(){
-
-    cloudTopCruise()
-    Thread.sleep(3000)
-
-    boneDryDunes()
-    Thread.sleep(3000)
-
-    bowsersCastle()
-    Thread.sleep(3000)
-
-    rainbowRoad()
-} // Special Cup
-
-fun cloudTopCruise(){
-    mapSpecial01()
-    Thread.sleep(3000)
-    windMils()
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    jump()
-    clouds()
-    jump()
-    track()
-    track()
-    finishTrack()
-}
-fun boneDryDunes(){
-    mapSpecial02()
-    Thread.sleep(3000)
-    desert()
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    jump()
-    air()
-    jump()
-    track()
-    track()
-    finishTrack()
-}
-fun bowsersCastle(){
-    mapSpecial03()
-    Thread.sleep(3000)
-    gates()
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    track()
-    track()
-    jump()
-    air()
-    jump()
-    track()
-    squareTrack()
-    squareTrack()
-    finishTrack()
-}
-fun rainbowRoad(){
-    mapSpecial04()
-    Thread.sleep(3000)
-    rainbow()
-    starttrack()
-    countDown()
-    track()
-    track()
-    track()
-    jump()
-    stars()
-    jump()
-    track()
-    track()
-    finishTrack()
-    finish()
-}
 
 fun countDown(){
     countdown(3)

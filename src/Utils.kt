@@ -10,17 +10,13 @@
 // Zeit
 // TODO Das muss ich kontrollieren von Batch 8 kopiert
 
-
-// Zeit für menüs
-fun loadingLine(){
+fun timeLoading(){
     repeat(10){
         println("|")
         Thread.sleep(50)
     }
 }
 
-
-// Zeit fürn Countdown
 fun countdown(seconds: Int) {
     for (i in seconds downTo 0) {
         if (i == 9)
@@ -35,9 +31,9 @@ fun countdown(seconds: Int) {
     }
 }
 
-
-// Zeit fürn Ladebildschirm
-
+fun run() {
+    Thread.sleep(250)
+}
 
 fun cr(): String{
     var cars = mutableListOf("ō͡≡o","-0-")
@@ -65,7 +61,7 @@ fun startGame(){
 }
 
 fun hauptmenue(){
-    loadingLine()
+    timeLoading()
     println("----------------- Hauptmenü -----------------")
     println()
     println("  [1]  Schnelles Rennen                      ")
@@ -92,6 +88,7 @@ fun hauptmenue(){
 }
 
 fun infoMenue() {
+    timeLoading()
     println("------------------- infos -------------------")
     println()
     println("  [1]  Allgemeines                           ")
@@ -117,7 +114,7 @@ fun infoMenue() {
 }
 
 fun allgemeines(){
-    loadingLine()
+    timeLoading()
     println("------------------- Allgemeines -------------------")
     println("       Willkommen zu Mario Kart ${CYAN}Syntax!${RESET}  ")
     println()
@@ -204,34 +201,21 @@ val KRONE = "\uD83D\uDC51"
 
 // Characters
 
-var fahrerListe = listOf<String>("Mario", "Luigi","Bowser","Princess Peach","Princess Daisy",
-                            "Toad","Wario","Yoshi","Ludwig","Donkey Kong","Link","Rosalina")
+var fahrerListe = listOf("Mario", "Luigi","Bowser","Princess Peach","Princess Daisy",
+                                    "Toad","Wario","Yoshi","Ludwig","Donkey Kong","Link","Rosalina")
 
 
 
 
 
-var simListFahrerOne = mutableListOf<Int>(1,2,3,4,5,6,7,8,9,10,11,12)
+var simListFahrerOne = mutableListOf(1,2,3,4,5,6,7,8,9,10,11,12)
 
-var simListFahrerVs = mutableListOf(1,2)
-
-
-val deinefahrzeuge = listOf("ō͡≡o","-0-")
 
 val alleFahrzeuge = listOf("ō͡≡o","ō͡≡o","ō͡≡o","ō͡≡o","ō͡≡o","ō͡≡o","ō͡≡o","-0-","-0-","-0-","-0-","-0-",)
-val trackNames = listOf<String>(
-    "Mario kart Stadium",
-    "Water Park",
-    "Sweet Sweet Canyon",
-    "Thwomp Ruins",
-    "Mario Circuit",
-    "Toad Harbor",
-    "Twisted Mansion",
-    "Shy Guy Falls",
-    "Cloud Top Cruise",
-    "Bone-Dry Dunes",
-    "Bowsers Castle",
-    "Rainbow Road")
+
+
+val trackNames = listOf("Mario kart Stadium", "Water Park", "Sweet Sweet Canyon", "Thwomp Ruins", "Mario Circuit",
+                        "Toad Harbor", "Twisted Mansion", "Shy Guy Falls", "Cloud Top Cruise", "Bone-Dry Dunes", "Bowsers Castle", "Rainbow Road")
 
 
 
