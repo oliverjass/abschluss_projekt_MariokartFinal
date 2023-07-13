@@ -1,3 +1,4 @@
+import kotlin.system.exitProcess
 
 // Zeit
 fun waiting(){
@@ -61,6 +62,8 @@ fun hauptmenue() {
         }
         3 -> {
             println("Spiel wird beendet")
+            exitProcess(0)
+
         }
         else -> {
             try {
