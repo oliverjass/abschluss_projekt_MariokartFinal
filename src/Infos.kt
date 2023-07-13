@@ -16,7 +16,7 @@ fun infoMenue() {
         4 -> hauptmenue()
         else -> {
             (auswahl >= 6)
-            println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
+            println("   ${RED}FEHLE: Nummer überschritten! versuch es nochmal${RESET}")
             hauptmenue()
         }
     }
