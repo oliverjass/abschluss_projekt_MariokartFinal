@@ -60,7 +60,7 @@ fun startGame(){
     hauptmenue()
 }
 
-fun hauptmenue(){
+fun hauptmenue() {
     timeLoading()
     println("----------------- Hauptmenü -----------------")
     println()
@@ -70,22 +70,30 @@ fun hauptmenue(){
     println()
     println("----------------- Hauptmenü -----------------")
     var eingabe: Int
-    try{
-        eingabe = readln().toInt()
-        when(eingabe) {
-            1 -> gameMenue()
-            2 -> infoMenue()
-            3 -> println("Spiel wird beendet")
-            else -> {
-                (eingabe >= 4)
-                println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
-                hauptmenue()
-            }
+
+    eingabe = readln().toInt()
+    when (eingabe) {
+        1 -> {
+            gameMenue()
         }
-    } catch (e: Exception){
-        println("   ${RED}FEHLER: versuch es nochmal${RESET}")
+        2 -> {
+            infoMenue()
+        }
+        3 -> {
+            println("Spiel wird beendet")
+        }
+        else -> {
+            try {
+                eingabe >= 4
+            } catch (e: Exception) {
+                    println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
+            }
+            println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
+            hauptmenue()
+        }
     }
 }
+
 
 fun infoMenue() {
     timeLoading()

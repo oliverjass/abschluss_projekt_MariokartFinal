@@ -10,20 +10,25 @@ fun gameMenue(): String{
         infoBox(character,alleFahrzeuge.random(),rennstrecke)
         println("Bestätige das Rennen zu starten (ja/nein):")
         startInput = readln().lowercase()
-        if (startInput == "j" || startInput == "ja") {
-            rennenBestaetigen(meinCharacter,alleFahrzeuge.random(),rennstrecke)
-            continue
-        } else {
-            println("Rennen wurde abgebrochen.")
-            hauptmenue()
+        try {
+            if (startInput == "j" || startInput == "ja") {
+                rennenBestaetigen(meinCharacter,alleFahrzeuge.random(),rennstrecke)
+                continue
+            } else {
+                println("Rennen wurde abgebrochen.")
+                hauptmenue()
+            }
+        } catch (e: Exception){
+            println("FEHLER")
         }
+
     }
     return ""
 }
 
 fun selectCharacter(): String {
     timeLoading()
-    println("[--------Characters-------------------------------------]")
+    println("[--------Characters-----------------------------------------------------------]")
     println()
     println("""
              [1]    $fahrer1                                 
@@ -45,7 +50,7 @@ fun selectCharacter(): String {
     println()
     println("   [13]   [zurück]                                        ")
     println("   [14]   [abbrechen]                                     ")
-    println("[-------------------------------------------------------]")
+    println("[-------------------------------------------------------------------------------]")
     var inputCharacter = readln().toInt()
     when {
         inputCharacter == 1 -> {
@@ -211,7 +216,7 @@ fun rennenBestaetigen(character: String, fahrzeug: String, rennstrecke: Rennstre
     timeLoading()
     if (character != null && fahrzeug != null && rennstrecke != null){
         println("Rennen wird gestartet!")
-        val simulation = rennstrecke.starteSimulation()
+        val simulation = rennstrecke.startRace()
         println()
         println()
         repeatMenu(character, fahrzeug, rennstrecke)
@@ -258,7 +263,7 @@ fun neuesRennen(character: String, fahrzeug: String){
 
 fun wiederholung(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
     println("Rennen wird wiederholt..")
-    rennstrecke.starteSimulation()
+    rennstrecke.startRace()
 }
 
 

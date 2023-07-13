@@ -33,7 +33,7 @@ var track11: Rennstrecke = Rennstrecke("Bowsers Castle")
 var track12: Rennstrecke = Rennstrecke("Rainbow Road")
 class Rennstrecke(val name: String){
 
-    fun starteSimulation(): Any{
+    fun startRace(): Any{
         return when (name) {
             "Mario Kart Stadium" -> marioKartStadium()
             "Water Park" -> waterPark()
@@ -50,52 +50,53 @@ class Rennstrecke(val name: String){
             else -> ""
         }
     }
-    fun startRace(){
+    fun start(){
         starttrack()
         countDown()
         println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
         run()
-        testSimulation()
+        race()
         run()
         track()
         run()
-        testSimulation()
+        race()
         run()
         track()
         run()
-        testSimulation()
+        race()
         run()
         track()
         run()
-        testSimulation()
+        race()
         run()
         track()
         run()
-        testSimulation()
+        race()
         jump()
     }
-    fun endRace(): Int{
+    fun finish(): Int{
         jump()
-        testSimulation()
+        race()
         run()
         track()
         run()
-        testSimulation()
+        race()
         run()
         track()
         run()
-        testSimulation()
+        race()
         run()
         track()
         run()
-        testSimulation()
+        race()
         run()
         track()
         run()
-        testSimulation()
+        race()
         run()
-        val ergebnis = testSimulation()
+        val ergebnis = race()
         finishTrack()
+        ende()
         if (ergebnis == 1) {
             println("$fahrer1 hat gewonnen")
             return 1
@@ -137,7 +138,7 @@ class Rennstrecke(val name: String){
             return 6
         }
     }
-    fun testSimulation(): Int{
+    fun race(): Int{
     var randomGenerator = simListFahrerOne.random()
     if(randomGenerator==1){
         println("                   |  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  | ")
@@ -210,32 +211,32 @@ class Rennstrecke(val name: String){
     mapMushroom01()
     Thread.sleep(3000)
     flyingCastle()
-    startRace()
+    start()
     fireWork()
-    endRace()
+    finish()
 }
     fun waterPark(){
         mapMushroom02()
         Thread.sleep(3000)
-        startRace()
+        start()
         water()
-        endRace()
+        finish()
     }
     fun sweetSweetCanyon(){
     mapMushroom03()
     Thread.sleep(3000)
     canyon()
-    startRace()
+    start()
     water()
-    endRace()
+    finish()
 }
     fun twompRuins(){
     mapMushroom04()
     Thread.sleep(3000)
     temple()
-    startRace()
+    start()
     garden()
-    endRace()
+    finish()
 }
 
 
@@ -245,68 +246,35 @@ class Rennstrecke(val name: String){
         mapFlower01()
         Thread.sleep(3000)
         castle2()
-        starttrack()
-        countDown()
-        track()
-        track()
-        track()
-        track()
-        track()
-        track()
-        track()
-        track()
-        finishTrack()
+        start()
+        garden()
+        finish()
+
 
     }
     fun toadHarbor(){
         mapFlower02()
         Thread.sleep(3000)
         beach()
-        starttrack()
-        countDown()
-        track()
-        track()
-        track()
-        track()
-        track()
-        track()
-        track()
-        track()
-        finishTrack()
+        start()
+        garden()
+        finish()
 
     }
     fun twistedMansion(){
         mapFlower03()
         Thread.sleep(3000)
         gate2()
-        starttrack()
-        countDown()
-        track()
-        track()
-        track()
-        track()
-        track()
-        track()
-        track()
-        finishTrack()
+        start()
+        garden()
+        finish()
     }
     fun shyGuyFalls(){
         mapFlower04()
         Thread.sleep(3000)
         waterfall()
-        starttrack()
-        countDown()
-        track()
-        track()
-        track()
-        jump()
-        water()
-        jump()
-        track()
-        track()
-        track()
-        track()
-        finishTrack()
+        start()
+        garden()
         finish()
     }
 
@@ -317,33 +285,33 @@ class Rennstrecke(val name: String){
         mapSpecial01()
         Thread.sleep(3000)
         windMils()
-        startRace()
+        start()
         clouds()
-        endRace()
+        finish()
     }
     fun boneDryDunes(){
         mapSpecial02()
         Thread.sleep(3000)
         desert()
-        startRace()
+        start()
         desert()
-        endRace()
+        finish()
     }
     fun bowsersCastle(){
         mapSpecial03()
         Thread.sleep(3000)
         gates()
-        startRace()
+        start()
         castle2()
-        endRace()
+        finish()
     }
     fun rainbowRoad(){
         mapSpecial04()
         Thread.sleep(3000)
         rainbow()
-        startRace()
+        start()
         stars()
-        endRace()
+        finish()
     }
 
     override fun toString(): String {

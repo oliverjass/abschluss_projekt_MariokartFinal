@@ -723,7 +723,7 @@ fun countDown(){
     Thread.sleep(200)
 }
 
-fun finish(){
+fun ende(){
     println()
     println("$YELLOW                                                               \n" +
             " ######   ######   ##  ##   ######    ####    ##  ##     ##    \n" +
