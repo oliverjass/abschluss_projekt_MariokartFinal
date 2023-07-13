@@ -2,6 +2,11 @@
 
 
 
+
+
+
+
+
 // Zeit
 // TODO Das muss ich kontrollieren von Batch 8 kopiert
 
@@ -193,23 +198,22 @@ val KRONE = "\uD83D\uDC51"
 
 
 // Characters
-val characters = listOf<String>(
-    "Mario",
-    "Luigi",
-    "Bowser",
-    "Princess Peach",
-    "Princess Daisy",
-    "Toad",
-    "Wario",
-    "Yoshi",
-    "Ludwig",
-    "Donkey Kong",
-    "Link",
-    "Rosalina")
+
+var fahrerListe = listOf<String>("Mario", "Luigi","Bowser","Princess Peach","Princess Daisy",
+                            "Toad","Wario","Yoshi","Ludwig","Donkey Kong","Link","Rosalina")
 
 
-val fahrzeuge = listOf("ō͡≡o","-0-")
 
+
+
+var simListFahrerOne = mutableListOf<Int>(1,2,3,4,5,6,7,8,9,10,11,12)
+
+var simListFahrerVs = mutableListOf(1,2)
+
+
+val deinefahrzeuge = listOf("ō͡≡o","-0-")
+
+val alleFahrzeuge = listOf("ō͡≡o","ō͡≡o","ō͡≡o","ō͡≡o","ō͡≡o","ō͡≡o","ō͡≡o","-0-","-0-","-0-","-0-","-0-",)
 val trackNames = listOf<String>(
     "Mario kart Stadium",
     "Water Park",
@@ -224,15 +228,5 @@ val trackNames = listOf<String>(
     "Bowsers Castle",
     "Rainbow Road")
 
-val cupNamen = listOf(
-    "Mushroom Cup",
-    "Flowers Cup",
-    "Special Cup")
 
 
-fun main(){
-
-    var sonst = listOf("$FLAGGE","$KRONE")
-    var items = listOf("$BANANE","$BANANEDREI","$BLITZ","$TURBOPILZ","$TURBOPILZDREI","$BOMB","$ITEMBOX","$GOLDTURBOPILZ","$KUGELWILLI","$REDPANZER","$GREENPANZER","$BLUEPANZER","$STERN","$FEUERBLUME","$SUPERHUPE")
-    println(characters.random())
-}

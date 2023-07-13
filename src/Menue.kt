@@ -1,104 +1,131 @@
+var meinCharacter = ""
+//var schnellesRennenFahrzeug = ""
 
-fun gameMenue(){
+
+
+
+
+fun gameMenue(): String{
     loadingLine()
-    var startInput : String? = ""
-    while (startInput != "ja"){
+    var startInput = ""
+    while (startInput != "j"){
         val character = waehleCharacter()
-        val fahrzeug = waehleFahrzeug()
         val rennstrecke = waehleRennstrecke()
-
-        infoBox(character,fahrzeug,rennstrecke)
+        meinCharacter = character
+        infoBox(character,alleFahrzeuge.random(),rennstrecke)
 
 
         println("Bestätige das Rennen zu starten (ja/nein):")
         val startInput = readln().lowercase()
 
-        if (startInput == "ja") {
-            rennenBestaetigen(character,fahrzeug,rennstrecke)
-            break
+        if (startInput == "j" || startInput == "ja") {
+            rennenBestaetigen(meinCharacter,alleFahrzeuge.random(),rennstrecke)
+            continue
         } else {
             println("Rennen wurde abgebrochen.")
+            //break
         }
     }
+    return ""
 }
 
-fun waehleCharacter(): Character? {
+fun waehleCharacter(): String {
+
+
     println("[--------Characters-------------------------------------]")
     println()
     println("""
-             [1]    Mario                 [7]    Wario                      
-             [2]    Luigi                 [8]    Yoshi                      
-             [3]    Bowser                [9]    Ludwig                     
-             [4]    Prinzessin Peach     [10]    Donkey Kong                
-             [5]    Prinzessin Daisy     [11]    Link                      
-             [6]    Toad                 [12]    Rosalina                    
+             [1]    $fahrer1             [7]    $fahrer7                       
+             [2]    $fahrer2             [8]    $fahrer8                       
+             [3]    $fahrer3             [9]    $fahrer9                      
+             [4]    $fahrer4            [10]    $fahrer10                  
+             [5]    $fahrer5            [11]    $fahrer11                       
+             [6]    $fahrer6            [12]    $fahrer12                     
     """.trimIndent())
     println()
     println()
-    println(" Wählen Sie ihr Charakter aus: 1-${characters.size}                     ")
+    println(" Wählen Sie ihr Charakter aus: 1-${fahrerListe.size}                     ")
     println()
     println("   [13]   [zurück]                                        ")
     println("   [14]   [abbrechen]                                     ")
     println("[-------------------------------------------------------]")
 
+    // For schleife muss gemacht werden die über alle charactere gilt und falls der gewählte charakter gewählt ist, dann einen continue machen
+    // Bei den restlichen characteren sollen die character in der gegner (liste) hinzugefügt werden
 
-    val characters = listOf(
-        Character("Mario"),
-        Character("Luigi"),
-        Character("Bowser"),
-        Character("Prinzessin Peach"),
-        Character("Prinzessin Daisy"),
-        Character("Toad"),
-        Character("Wario"),
-        Character("Yoshi"),
-        Character("Ludwig"),
-        Character("Donkey Kong"),
-        Character("Link"),
-        Character("Rosalina"),
-    )
-
-    val auswahl = readln().toInt()-1
-
-    if (auswahl in 0..characters.size) {
-        println(characters[auswahl])
-        return characters[auswahl]
-    }
-    return null
-}
-
-fun waehleFahrzeug(): Fahrzeug? {
-    println("[-------- Cars -----------------------------------------]")
-    println()
-    println("""
-               [1]  ō͡≡o                [2]  -0-            
-               Kart                    Bike           
-    """.trimIndent())
-    println()
-    println(" Suchen sie einen Fahrzeug aus: 1-${fahrzeuge.size}                         ")
-    println()
-    println("  [0]   [zurück]                                         ")
-    println("  [3]   [abbrechen]                                      ")
-    println("[-------------------------------------------------------]")
-
-    val fahrzeuge = listOf(
-        Kart("ō͡≡o"),
-        Bike("-0-")
-    )
-    var auswahl =  readln().toInt()
-        try {
-            if (auswahl!! in 0..fahrzeuge.size){
-                println(fahrzeuge[auswahl])
-                return fahrzeuge[auswahl]
-            } else {
-                println("Ungültige zahl eingegeben sie müssen von 1-${fahrzeuge.size}")
-            }
-        } catch (ex: Exception) {
-            println("Sie müssen eine Zahl eingeben")
+    var inputCharacter = readln().toInt()
+    when {
+        inputCharacter == 1 -> {
+            println("Character: ${fahrer1}")
+            return fahrer1.name
         }
-    return null
+        inputCharacter == 2 -> {
+            println("Character: ${fahrer2}")
+            return fahrer2.name
+        }
+        inputCharacter == 3 -> {
+            println("Character: ${fahrer3}")
+            return fahrer3.name
+        }
+        inputCharacter == 4 -> {
+            println("Character: ${fahrer4}")
+            return fahrer4.name
+        }
+        inputCharacter == 5 -> {
+            println("Character: ${fahrer5}")
+            return fahrer5.name
+        }
+        inputCharacter == 6 -> {
+            println("Character: ${fahrer6}")
+            return fahrer6.name
+        }
+        inputCharacter == 7 -> {
+            println("Character: ${fahrer7}")
+            return fahrer7.name
+        }
+        inputCharacter == 8 -> {
+            println("Character: ${fahrer8}")
+            return fahrer8.name
+        }
+        inputCharacter == 9 -> {
+            println("Character: ${fahrer9}")
+            return fahrer9.name
+
+        }
+        inputCharacter == 10 -> {
+            println("Character: ${fahrer10}")
+            return fahrer10.name
+        }
+        inputCharacter == 11 -> {
+            println("Character: ${fahrer11}")
+            return fahrer11.name
+        }
+        inputCharacter == 12 -> {
+            println("Character: ${fahrer12}")
+            return fahrer12.name
+        }
+        inputCharacter == 13 -> {
+            hauptmenue()
+            return ""
+        }
+        inputCharacter == 14 -> {
+            hauptmenue()
+            return ""
+        }
+        (inputCharacter >= 15) || (inputCharacter.toString() == "")  -> {
+            println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
+            waehleCharacter()
+        }
+        else -> {
+            println("FEHLER")
+        }
+    }
+    return ""
 }
 
-fun waehleRennstrecke(): Rennstrecke? {
+
+
+fun waehleRennstrecke(): Rennstrecke {
     println("[--------Rennstrecke------------------------------------------------------------]")
     println("""
      Suchen sie eine Rennstrecke aus: 1-${trackNames.size}
@@ -115,50 +142,91 @@ fun waehleRennstrecke(): Rennstrecke? {
     println("  [13]  [abbrechen]                                                              ")
     println("[-------------------------------------------------------------------------------]")
 
-    val rennstrecken = listOf(
-        Rennstrecke("Mario Kart Stadium"),
-        Rennstrecke("Water Park"),
-        Rennstrecke("Sweet Sweet Canyon"),
-        Rennstrecke("Thwomp Ruins"),
-        Rennstrecke("Mario Circuit"),
-        Rennstrecke("Toad Harbor"),
-        Rennstrecke("Twisted Mansion"),
-        Rennstrecke("Shy Guy Falls"),
-        Rennstrecke("Cloudtop Cruise"),
-        Rennstrecke("Bone-Dry Dunes"),
-        Rennstrecke("Bowsers Castle"),
-        Rennstrecke("Rainbow Road"),
-    )
+    var inputTrack = readln().toInt()
+    when {
+        inputTrack == 1 -> {
+            println("Rennstrecke: ${track01}")
+            return track01
+        }
+        inputTrack == 2 -> {
+            println("Rennstrecke: ${track02}")
+            return track02
+        }
+        inputTrack == 3 -> {
+            println("Rennstrecke: ${track03}")
+            return track03
+        }
+        inputTrack == 4 -> {
+            println("Rennstrecke: ${track04}")
+            return track04
+        }
+        inputTrack == 5 -> {
+            println("Rennstrecke: ${track05}")
+            return track05
+        }
+        inputTrack == 6 -> {
+            println("Rennstrecke: ${track06}")
+            return track06
+        }
+        inputTrack == 7 -> {
+            println("Rennstrecke: ${track07}")
+            return track07
+        }
+        inputTrack == 8 -> {
+            println("Rennstrecke: ${track08}")
+            return track08
+        }
+        inputTrack == 9 -> {
+            println("Rennstrecke: ${track09}")
+            return track09
+        }
+        inputTrack == 10 -> {
+            println("Rennstrecke: ${track10}")
+            return track10
+        }
+        inputTrack == 11 -> {
+            println("Rennstrecke: ${track11}")
+            return track11
+        }
+        inputTrack == 12 -> {
+            println("Rennstrecke: ${track12}")
+            return track12
+        }
+        inputTrack == 13 -> {
+            hauptmenue()
 
-
-    val auswahl = readln().toInt()-1
-
-
-
-    if (auswahl in 0..rennstrecken.size) {
-        println(rennstrecken[auswahl])
-        return rennstrecken[auswahl]
-    } else {
-        println("FEHLER")
+        }
+        inputTrack == 14 -> {
+            hauptmenue()
+        }
+        (inputTrack >= 15) || (inputTrack.toString() == "")  -> {
+            println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
+            waehleCharacter()
+        }
+        else -> {
+            println("FEHLER")
+        }
     }
-    return null
+    //fahrerListe.removeAt(inputCharacter)
+    return Rennstrecke("none")
+
+
 }
 
-fun infoBox(character: Character?, fahrzeug: Fahrzeug?, rennstrecke: Rennstrecke?){
-    if ((character != null) && (fahrzeug != null) && (rennstrecke != null)) {
-        println("Character: ${character.name}")
-        println("Fahrzeug: ${fahrzeug.name}")
-        println("Rennstrecke: ${rennstrecke.name}")
+fun infoBox(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
+    if (character != null && fahrzeug != null && rennstrecke != null) {
+        println("Character: ${character}")
+        println("Fahrzeug: ${fahrzeug}")
+        println("Rennstrecke: ${rennstrecke}")
     }
     else {
         println("Ihre eingaben sind UNGÜLTIG")
     }
 }
 
-fun rennenBestaetigen(character: Character?,fahrzeug: Fahrzeug?,rennstrecke: Rennstrecke?){
+fun rennenBestaetigen(character: String, fahrzeug: String, rennstrecke: Rennstrecke?){
     if (character != null && fahrzeug != null && rennstrecke != null){
         println("Rennen wird gestartet!")
-
 
         val simulation = rennstrecke.starteSimulation()
         println("Simulation: $simulation")
@@ -169,7 +237,7 @@ fun rennenBestaetigen(character: Character?,fahrzeug: Fahrzeug?,rennstrecke: Ren
     }
 }
 
-fun repeatMenu(character: Character, fahrzeug: Fahrzeug,rennstrecke: Rennstrecke){
+fun repeatMenu(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
     println("Möchten Sie weiterspielen?")
     println("   [1] -  Neustart")
     println("   [2] -  Rennstrecke auswählen")
@@ -186,7 +254,7 @@ fun repeatMenu(character: Character, fahrzeug: Fahrzeug,rennstrecke: Rennstrecke
     }
 }
 
-fun neuesRennen(character: Character, fahrzeug: Fahrzeug){
+fun neuesRennen(character: String, fahrzeug: String){
     println("Wählen Sie eine neue Rennstrecke")
 
     val rennstrecke = waehleRennstrecke()
@@ -199,9 +267,9 @@ fun neuesRennen(character: Character, fahrzeug: Fahrzeug){
     println("Bestäge das Rennen zu starten (j/n)")
     val startInput = readln().lowercase()
 
-    if (startInput == "j") {
+    if (startInput == "j" || startInput == "ja") {
         rennenBestaetigen(character, fahrzeug, rennstrecke)
-    } else if (startInput == "n"){
+    } else if (startInput == "n" || startInput == "nein"){
         println("Das Rennen wurde abgebrochen.")
     } else {
         println("FEHLER")
@@ -209,7 +277,7 @@ fun neuesRennen(character: Character, fahrzeug: Fahrzeug){
 
 }
 
-fun wiederholung(character: Character,fahrzeug: Fahrzeug,rennstrecke: Rennstrecke){
+fun wiederholung(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
     println("Rennen wird wiederholt..")
     rennstrecke.starteSimulation()
 }
