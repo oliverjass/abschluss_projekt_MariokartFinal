@@ -4,8 +4,8 @@ fun infoMenue() {
     println()
     println("  [1]  Allgemeines                           ")
     println("  [2]  Items                                 ")
-    println("  [2]  Credits                               ")
-    println("  [3]  Zurück                                ")
+    println("  [3]  Credits                               ")
+    println("  [4]  Zurück                                ")
     println()
     println("------------------- infos -------------------")
     val auswahl = readln().toInt()
@@ -15,7 +15,7 @@ fun infoMenue() {
         3 -> credits()
         4 -> hauptmenue()
         else -> {
-            (auswahl >= 6)
+            (auswahl >= 5)
             println("   ${RED}FEHLER: Nummer überschritten! versuch es nochmal${RESET}")
             hauptmenue()
         }

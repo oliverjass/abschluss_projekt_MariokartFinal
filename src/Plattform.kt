@@ -15,9 +15,8 @@ fun gameMenue(): String{
                 continue
             } else {
                 println("Das Rennen wurde abgebrochen.")
-                
             }
-        } catch (e: Exception){
+            } catch (e: Exception){
             println("FEHLER Von gameMenue")
         }
     }
@@ -212,7 +211,6 @@ fun applyRace(character: String, fahrzeug: String, rennstrecke: Rennstrecke){
     if (character != null && fahrzeug != null && rennstrecke != null){
         println("Rennen wird gestartet!")
         val simulation = rennstrecke.startRace()
-        println()
         println()
         repeatMenu(character, fahrzeug, rennstrecke)
     } else {

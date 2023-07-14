@@ -4,7 +4,6 @@ import kotlin.system.exitProcess
 fun waiting(){
     Thread.sleep(2000)
 }
-
 fun timeLoading(){
     repeat(10){
         println("|")
@@ -63,7 +62,6 @@ fun hauptmenue() {
         3 -> {
             println("Spiel wird beendet")
             exitProcess(0)
-
         }
         else -> {
             try {
@@ -92,7 +90,7 @@ val RESET = "\u001B[0m"
 
 
 
-// Icons
+// Emojis
 val BANANE ="🍌"
 val BANANEDREI = "\uD83C\uDF4C\uD83C\uDF4C\uD83C\uDF4C"
 val BLITZ ="${YELLOW}⚡${RESET}"
@@ -125,7 +123,7 @@ val alleFahrzeuge = listOf("ō͡≡o","ō͡≡o","ō͡≡o","ō͡≡o","ō͡≡o
 
 
 val trackNames = listOf("Mario kart Stadium", "Water Park", "Sweet Sweet Canyon", "Thwomp Ruins", "Mario Circuit",
-                        "Toad Harbor", "Twisted Mansion", "Shy Guy Falls", "Cloud Top Cruise", "Bone-Dry Dunes", "Bowsers Castle", "Rainbow Road")
+                        "Toad Harbor", "Twisted Mansion", "Shy Guy Falls", "Cloud-Top Cruise", "Bone-Dry Dunes", "Bowsers Castle", "Rainbow Road")
 
 
 

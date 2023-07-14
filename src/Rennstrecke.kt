@@ -23,14 +23,14 @@ var track05: Rennstrecke = Rennstrecke("Mario Circuit")
 var track06: Rennstrecke = Rennstrecke("Toad Harbor")
 var track07: Rennstrecke = Rennstrecke("Twisted Mansion")
 var track08: Rennstrecke = Rennstrecke("Shy Guy Falls")
-var track09: Rennstrecke = Rennstrecke("Cloudtop Cruise")
+var track09: Rennstrecke = Rennstrecke("Cloud-Top Cruisee")
 var track10: Rennstrecke = Rennstrecke("Bone-Dry Dunes")
 var track11: Rennstrecke = Rennstrecke("Bowsers Castle")
 var track12: Rennstrecke = Rennstrecke("Rainbow Road")
-class Rennstrecke(val name: String){
+class Rennstrecke(var name: String){
 
-    fun startRace(): Any{
-        return when (name) {
+    fun startRace() {
+        when (name) {
             "Mario Kart Stadium" -> marioKartStadium()
             "Water Park" -> waterPark()
             "Sweet Sweet Canyon" -> sweetSweetCanyon()
@@ -43,7 +43,7 @@ class Rennstrecke(val name: String){
             "Bone-Dry Dunes" -> boneDryDunes()
             "Bowsers Castle" -> bowsersCastle()
             "Rainbow Road" -> rainbowRoad()
-            else -> ""
+            else -> cloudTopCruise()
         }
     }
     fun start(){
@@ -132,7 +132,7 @@ class Rennstrecke(val name: String){
             return 12
         } else {
             println("Das Rennen wurde abgebrochen!")
-            return 6
+            return 0 // alt war 6: Da wahr ein tippfehler
         }
     }
     fun race(): Int{
@@ -207,14 +207,16 @@ class Rennstrecke(val name: String){
     fun marioKartStadium(){
     mapMushroom01()
     Thread.sleep(3000)
-    flyingCastle()
+        fireWork()
     start()
-    fireWork()
+        flyingCastle()
     finish()
-}
+    }
+
     fun waterPark(){
         mapMushroom02()
         Thread.sleep(3000)
+        waterfall()
         start()
         water()
         finish()
@@ -224,7 +226,7 @@ class Rennstrecke(val name: String){
     Thread.sleep(3000)
     canyon()
     start()
-    water()
+    desert()
     finish()
 }
     fun twompRuins(){
@@ -244,7 +246,7 @@ class Rennstrecke(val name: String){
         Thread.sleep(3000)
         castle2()
         start()
-        garden()
+        clouds()
         finish()
 
 
@@ -254,7 +256,7 @@ class Rennstrecke(val name: String){
         Thread.sleep(3000)
         beach()
         start()
-        garden()
+        bridges()
         finish()
 
     }
@@ -263,7 +265,7 @@ class Rennstrecke(val name: String){
         Thread.sleep(3000)
         gate2()
         start()
-        garden()
+        hauntedHouse()
         finish()
     }
     fun shyGuyFalls(){
@@ -271,14 +273,14 @@ class Rennstrecke(val name: String){
         Thread.sleep(3000)
         waterfall()
         start()
-        garden()
+        water()
         finish()
     }
 
 
     // Special Cup
 
-    fun cloudTopCruise(){
+     fun cloudTopCruise(){
         mapSpecial01()
         Thread.sleep(3000)
         windMils()
@@ -286,10 +288,12 @@ class Rennstrecke(val name: String){
         clouds()
         finish()
     }
+
+
     fun boneDryDunes(){
         mapSpecial02()
         Thread.sleep(3000)
-        desert()
+        boneDesert()
         start()
         desert()
         finish()
@@ -299,9 +303,12 @@ class Rennstrecke(val name: String){
         Thread.sleep(3000)
         gates()
         start()
-        castle2()
+        flamed()
         finish()
     }
+
+
+
     fun rainbowRoad(){
         mapSpecial04()
         Thread.sleep(3000)
